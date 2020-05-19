@@ -1,0 +1,114 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App Principal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!--VUE-->
+    <script src="vue.js"></script>
+    <script src="vue-router.js"></script>
+
+    <!--AXIOS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid" id="app" style="padding: 0;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" width="30" height="30" alt="" loading="lazy">
+              </a>
+            <a class="navbar-brand" href="#"><strong class="text-light">AVENGERS</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item active" style="margin-right: 4px;">
+                        <router-link class="nav-link text-light btn btn-dark" to="/">Inicio</router-link>                        
+                    </li>
+                    <li class="nav-item" style="margin-right: 4px;">
+                        <router-link class="nav-link text-light btn btn-dark" to="contacto">¿Quienes Somos?</router-link>
+                    </li>
+                    <li class="nav-item" style="margin-right: 4px;">
+                        <router-link class="nav-link text-light btn btn-dark" to="vengadores">Vengadores</router-link>
+                    </li>
+                    <li class="nav-item" style="margin-right: 4px;">
+                        <router-link  class="nav-link text-light btn btn-dark" to="gemas">Gemas del Infinito</router-link>
+                    </li>
+                    <li class="nav-item" style="margin-right: 4px;">
+                        <router-link class="nav-link text-light btn btn-dark" to="villanos">Villanos</router-link>
+                    </li>
+                    <li class="nav-item" style="margin-right: 4px;">
+                        <router-link class="nav-link text-light btn btn-dark" to="eventos">Contacto</router-link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-center" style="margin-top: 20px;">
+            <router-view></router-view>
+        </div>
+    </div>
+
+
+</body>
+
+<!--JS | BOOTSTRAP -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+<!-- Vistas -->
+<script src="vistas/vengadores.vue.js"></script>
+<script src="vistas/villanos.vue.js"></script>
+<script src="vistas/inicio.vue.js"></script>
+<script src="vistas/contacto.vue.js"></script>
+<script src="vistas/gemas.vue.js"></script>
+
+<!--Componentes-->
+<script src="componentes/formulario.js"></script>
+<script src="componentes/crear_vengador.js"></script>
+<script src="componentes/cambiar_vengador.js"></script>
+<script src="componentes/crear_gema.js"></script>
+<script src="componentes/crear_villano.js"></script>
+<script src="componentes/cambiar_villano.js"></script>
+<script src="componentes/cambiar_gema.js"></script>
+
+
+<script type="text/javascript">
+    Vue.use(VueRouter);
+
+    var routes = [
+        { path: '/', component: Inicio },
+        { path: '/contacto', component: Contacto },
+        { path: '/gemas', component: Gemas, name: "Gemas" },
+        { path: '/villanos', component: Villanos, name: "Villanos" },
+        { path: '/vengadores', component: Vengadores },
+        { path: '/vengadores', component: Vengadores, name: "Vengadores" },
+        { path: '/crear_vengador', component: CrearVengador, name: "crear_vengador" },
+        { path: '/cambiar_vengador/:id', component: CambiarVengador, name: "cambiar_vengador" },
+        { path: '/crear_gema', component: CrearGema, name: "crear_gema" },
+        { path: '/cambiar_gema/:id', component: CambiarGema, name: "cambiar_gema" },
+        { path: '/crear_villano', component: CrearVillano, name: "crear_villano" },
+        { path: '/cambiar_villano', component: CambiarVillano, name: "cambiar_villano" }
+    ];
+
+    var router = new VueRouter({
+        routes: routes,
+    });
+
+    var app = new Vue({
+        el: '#app',
+        router: router
+    });
+</script>
+
+</html>

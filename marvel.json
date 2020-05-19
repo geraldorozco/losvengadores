@@ -1,0 +1,44 @@
+{
+    "vengadores": [
+        {
+            "nombres": "Carlos",
+            "apellidos": "Chacón",
+            "heroe": "Anonimo",
+            "poder": "volar",
+            "trabajo": "estudiante",
+            "telefono": "45142843",
+            "email": "carlos@vengadores.com"
+        }
+
+    ],
+
+    "gemas": [
+          {
+            "nombre": "gema 1",
+            "poder": "poder 1",
+            "portador": "portador1",
+            "ubicacion": "tierra"
+          }
+    ],
+
+    "villanos": [
+        {
+          "nombre": "roberto",
+          "poder": "poder 1",
+          "origen": "desconocido",
+          "derrotado": "heroe 1"
+        }
+    ],
+
+    "contacto": [
+
+      {
+      "heroe": "heroe 1",
+      "descripcion": "hola",
+      "telefono": "45142843",
+      "Email": "carlos@vengadores.com"
+    }
+
+
+    ]
+}
